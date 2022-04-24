@@ -1,0 +1,43 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+<div>
+    <b>@Nesto</b>
+</div>
+
+<b>Welcome to your new app.</b>
+<button @onclick=Test>Test</button>
+
+<ul>
+    @for(int i =0; i<100; i++)
+    {
+        @if (i % 5 == 0)
+        {
+            <li>@i</li>
+        }
+    }
+</ul>
+<div>
+<b>==================</b>
+</div>
+<ul>
+    @foreach(int broj in Testt)
+    {
+        <li>@broj</li>
+    }
+</ul>
+
+
+
+@code
+{
+    public int Nesto{ get; set; }
+    public List<int> Testt { get; set; } = new();
+    public void Test()
+    {        
+        Console.WriteLine(Nesto++);
+        Testt.Add(Nesto*5);
+    }
+}
